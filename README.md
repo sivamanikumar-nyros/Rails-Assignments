@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -26,4 +25,3 @@ Things you may want to cover:
 =======
 # Ruby-Hello-World
 My First Ruby Assignment
->>>>>>> 449d08a5604982ea58e44f65ac4b26594f3ca3f9
