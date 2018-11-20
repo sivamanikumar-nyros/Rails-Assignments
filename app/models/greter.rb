@@ -1,0 +1,2 @@
+class Greter < ApplicationRecord
+end
