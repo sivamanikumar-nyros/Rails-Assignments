@@ -1,0 +1,40 @@
+<div class="jumbotron" style="background-color: #463265;color: white">
+    <center>
+        <h1>Welcome to my shop</h1>
+        <p>Please take a look at all of our coll products!</p>
+    </center>
+    <nav class="navbar navbar-inverse role=" navigation " style="background-color:#717ae7 ">
+
+    <div class="container ">
+    <h3>If you are interested in my website please post your interest</h3>
+    <%= link_to "posts ",posts_new_path,class: "navbar-brand " %></div>
+
+	</nav>
+</div>
+<style type="text/css ">
+
+	.navbar-brand{
+		color: black;
+		font-weight: bold;
+	}
+	.navbar-brand:hover{
+		color: white;
+		background-color: black;
+		padding: 5px;
+	}
+</style>
+
+<nav class="navbar navbar-inverse role="navigation" style="background-color: #717ae7">
+        <%= link_to "Home",root_path,class: "navbar-brand" %>
+
+            <%= link_to "See our bikes for sale",welcome_bikes_path,class: "navbar-brand" %>
+                <%= link_to "See our gear for sale",welcome_gear_path,class: "navbar-brand" %>
+                    <%= link_to "See Services we offer",welcome_services_path,class: "navbar-brand" %>
+    </nav>
+
+    <div class="container">
+        <center>
+            <h1>Gear for sale</h1>
+        </center>
+        <p>A gear or cogwheel is a rotating machine part having cut teeth, or in the case of a cogwheel, inserted teeth (called cogs), which mesh with another toothed part to transmit torque. Geared devices can change the speed, torque, and direction of a power source. Gears almost always produce a change in torque, creating a mechanical advantage, through their gear ratio, and thus may be considered a simple machine. The teeth on the two meshing gears all have the same shape.[1] Two or more meshing gears, working in a sequence, are called a gear train or a transmission. A gear can mesh with a linear toothed part, called a rack, producing translation instead of rotation. The gears in a transmission are analogous to the wheels in a crossed, belt pulley system. An advantage of gears is that the teeth of a gear prevent slippage. When two gears mesh, if one gear is bigger than the other, a mechanical advantage is produced, with the rotational speeds, and the torques, of the two gears differing in proportion to their diameters. In transmissions with multiple gear ratios—such as bicycles, motorcycles, and cars—the term "gear" as in "first gear" refers to a gear ratio rather than an actual physical gear. The term describes similar devices, even when the gear ratio is continuous rather than discrete, or when the device does not actually contain gears, as in a continuously variable transmission.[2] </p>
+    </div>

@@ -1,0 +1,43 @@
+<div class="jumbotron" style="background-color: #463265;color: white">
+    <center>
+        <h1>Welcome to my shop</h1>
+        <p>Please take a look at all of our coll products!</p>
+    </center>
+    <nav class="navbar navbar-inverse role=" navigation " style="background-color:#717ae7 ">
+
+    <div class="container ">
+    <h3>If you are interested in my website please post your interest</h3>
+    <%= link_to "posts ",posts_new_path,class: "navbar-brand " %></div>
+
+	</nav>
+</div>
+<style type="text/css ">
+
+	.navbar-brand{
+		color: black;
+		font-weight: bold;
+
+	}
+	.navbar-brand:hover{
+		color: white;
+		background-color: black;
+		padding: 5px;
+	}
+
+</style>
+<nav class="navbar navbar-inverse role="navigation" style="background-color: #717ae7">
+        <%= link_to "Home",root_path,class: "navbar-brand" %>
+
+            <%= link_to "See our bikes for sale",welcome_bikes_path,class: "navbar-brand" %>
+                <%= link_to "See our gear for sale",welcome_gear_path,class: "navbar-brand" %>
+                    <%= link_to "See Services we offer",welcome_services_path,class: "navbar-brand" %>
+    </nav>
+
+    <div class="container">
+        <center>
+            <h1>Services we offer</h1>
+        </center>
+        <p>Always a workshop near you Express bike service is one of the largest network of multi-brand 2-wheeler servicing workshops that offer repairs, service and maintenance of bikes and scooters of leading OE brands. At Express bike service we ensure that standardised processes, genuine parts and advanced diagnostic equipment keep your bike running like new, year after year. Technicians at Express bike services are trained at Bosch Training centres across India in the latest 2 wheeler technology and to diagnose vehicle troubleshooting with the latest Bosch diagnostic equipment with utmost efficiency and fix them. Salient Features and Benefits Large Network with over 350 EBS workshops across India Comprehensive,Fast and efficient service Qualified, trustworthy technicians certified by Bosch Fair approach to repair work
+        </p>
+
+    </div>
