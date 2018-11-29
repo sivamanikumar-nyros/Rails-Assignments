@@ -1,0 +1,46 @@
+<div class="container">
+ <div class="form-group">
+    <%= form_with model: @article, local: true do |form| %>
+ 
+    <% if @article.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@article.errors.count, "error") %> prohibited
+          this article from being saved:
+        </h2>
+        <ul>
+          <% @article.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+    <body>
+      <div class="form-group">
+          <p>
+            <%= form.label :name %><br>
+            <%= form.text_field :name,{:class=>'name' } %>
+          </p>
+          <p>
+            <%= form.label :description %><br>
+            <%= form.text_area :description ,{:class=>'description' }%>
+          </p>
+          <p>
+            <%= form.label :category %><br>
+            <%= form.select :category, [["Devotional","Devotional"], ["Historical","Historical"], ["Adventure","Adventure"], ["Kids","Kids"], ["Funny","Funny"], ["Sports","Sports"], ["Love","Love"], ["Singing","Singing"], ["Dancing","Dancing"], ["10+",10]], { prompt: "Select..." }, { class: "form-control category", required: true } %>
+          </p>
+          <p class="check_box">
+            <%= form.check_box :checkbox, {required: true} %>
+            
+            Please click to confirm
+          </p>
+          
+        
+      </div>
+      <p class="save">
+        <%= form.submit 'Save',{:class=>'btn btn-success show'}%>
+      </p>
+    <% end %>
+    </body>
+</div>
