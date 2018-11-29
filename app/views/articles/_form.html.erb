@@ -14,23 +14,23 @@
   </div>
   <%= form_with model: @article, local: true do |form| %>
     <table class="form_page">
-    
-          <p>
+        
+          <div class="form-group">
             <%= form.label :name %><br>
-            <%= form.text_field :name,{:class=>'name' } %>
-          </p>
-          <p>
+            <%= form.text_field :name,{:class=>'form-control' } %>
+          </div>
+          <div class="form-group">
             <%= form.label :description %><br>
-            <%= form.text_area :description ,{:class=>'description' }%>
-          </p>
-          <p>
+            <%= form.text_area :description ,{:class=>'form-control' }%>
+          </div>
+          <div class="form-group">
             <%= form.label :category %><br>
             <%= form.select :category, [["Devotional","Devotional"], ["Historical","Historical"], ["Adventure","Adventure"], ["Kids","Kids"], ["Funny","Funny"], ["Sports","Sports"], ["Love","Love"], ["Singing","Singing"], ["Dancing","Dancing"], ["10+",10]], { prompt: "Select..." }, { class: "form-control category", required: true } %>
-          </p>
+          </div>
           <p class="check_box">
             <%= form.check_box :checkbox, {required: true} %>
             
-            Please click to confirm
+            If you want to publish your story accept this!!
           </p>
           
         <div class="row">
