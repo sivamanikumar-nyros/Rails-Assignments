@@ -1,46 +1,52 @@
-    
-    <% if @article.errors.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(@article.errors.count, "error") %> prohibited
-          this article from being saved:
-        </h2>
-        <ul>
-          <% @article.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-            <% end %>
-        </ul>
-    <% end %>
+<%= form_with model: @article, local: true do |form| %>
   </div>
-  <%= form_with model: @article, local: true do |form| %>
-    <table class="form_page">
+  
+  <table class="form_page">
         
-          <div class="form-group">
-            <%= form.label :name %><br>
-            <%= form.text_field :name,{:class=>'form-control' } %>
-          </div>
-          <div class="form-group">
-            <%= form.label :description %><br>
-            <%= form.text_area :description ,{:class=>'form-control' }%>
-          </div>
-          <div class="form-group">
-            <%= form.label :category %><br>
-            <%= form.select :category, [["Devotional","Devotional"], ["Historical","Historical"], ["Adventure","Adventure"], ["Kids","Kids"], ["Funny","Funny"], ["Sports","Sports"], ["Love","Love"], ["Singing","Singing"], ["Dancing","Dancing"], ["10+",10]], { prompt: "Select..." }, { class: "form-control category", required: true } %>
-          </div>
-          <p class="check_box">
-            <%= form.check_box :checkbox, {required: true} %>
+    <div class="form-group">
+      <%= form.label :name %><br>
+      <%= form.text_field :name,{:class=>'form-control' } %>
             
-            If you want to publish your story accept this!!
-          </p>
+        <p class="error_msg" ><%= @article.errors.messages[:name].first if @article.errors.messages[:name].any? %></p>
+        <p><% @article.errors.full_messages.each do |msg| %></p>
+        <p><% msg %></p>
+      <% end %>
+    </div>
           
-        <div class="row">
-          <div align="left" class="col-6">
-            <%= link_to 'Back', articles_path, {:class=>"btn btn-warning back"} %>
-          </div>
-          <div align="right" class="col-6">
-            <%= form.submit :save,{:class=>"btn btn-success show_article"} %>
-          </div>
+    <div class="form-group">
+      <%= form.label :description %><br>
+      <%= form.text_area :description ,{:class=>'form-control' }%>
+      <p class="error_msg" ><%= @article.errors.messages[:description].first if @article.errors.messages[:description].any? %></p>
+    </div>
+          
+    <div class="form-group">
+      <div align="left"><%= form.label :category %></div>
+        <%= form.select :category_id, Category.all.pluck(:name, :id), { prompt: 'Select' }, { class: "form-control" } %>
+          <p class="error_msg" ><%= @article.errors.messages[:category].first if @article.errors.messages[:category].any? %></p>
+    </div>
+    <div class="form-group">
+      <p><%= @article.author_id%></p>
+        <div align="left"><%= form.label :author %></div>
+          <%= form.select :author_id, Author.all.pluck(:name, :id), { prompt: 'Select' }, { class: "form-control" } %>
+            <p class="error_msg" ><%= @article.errors.messages[:author].first if @article.errors.messages[:author].any? %></p>
+    </div>
+      <p class="check_box">
+        <%= form.check_box :checkbox%>
+            If you want to publish your story accept this!!
+      </p>
+      <p class="error_msg" ><%= @article.errors.messages[:checkbox].first if @article.errors.messages[:checkbox].any? %></p>
+
+      <div class="row">
+        
+        <div align="left" class="col-6">
+          <%= link_to 'Back', articles_path, {:class=>"btn btn-warning back"} %>
         </div>
-      
-    <% end %>
-    </table>
+
+        <div align="right" class="col-6">
+          <%= form.submit :save,{:class=>"btn btn-success show_article"} %>
+        </div>
+
+      </div>
+  </table>
+<% end %>
+    

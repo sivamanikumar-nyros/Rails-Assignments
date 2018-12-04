@@ -28,8 +28,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'client_side_validations'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
+gem 'hirb', '~> 0.7.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
