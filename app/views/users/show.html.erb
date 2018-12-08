@@ -1,0 +1,60 @@
+<body>
+  <div class="container">
+    <table id="customers">
+      <tr>
+        <th>
+          <strong>Name:</strong>
+        </th>
+        <td>
+          <%= @user.name %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <strong>Gender:</strong>
+        </th>
+        <td>
+          <%= @user.gender %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <strong>Enabled:</strong>
+        </th>
+        <td>
+          <%= @user.enabled %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <strong>State:</strong>
+        </th>
+        <td>
+          <%= @user.address.state if @user.address %>
+        </td>
+      <tr>
+      <tr>
+        <th>
+          <strong>City:</strong>
+        </th>
+        <td>
+          <%= @user.address.city if @user.address %>
+        </td>
+      <tr>
+      <tr>
+        <th>
+          <strong>Doornumber:</strong>
+        </th>
+        <td>
+          <%= @user.address.doornumber if @user.address %>
+        </td>
+      <tr>
+      <p class="show_page">
+        <%= link_to 'Edit', edit_user_path(@user),{:class=>'btn btn-warning edit' } %>
+      </p>
+      <p  class="show_page-1">
+        <%= link_to 'Back', users_path,{:class=>'btn btn-warning back' } %>
+      </p>
+    </table>
+  </div>
+</body>

@@ -12,6 +12,8 @@ class Article < ApplicationRecord
     
     belongs_to :category
 
+    has_many :reviews
+
     after_create :create_action
 
     

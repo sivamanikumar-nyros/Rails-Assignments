@@ -1,0 +1,69 @@
+<body>
+  <div id="index_page">
+    <div class="Listing">
+      <h2 class="badge badge-primary Listbadge">Listing user details</h2>
+    </div>
+    <div class="Listing-2">
+      <%= link_to 'New user', new_user_path,{:class=>'btn btn-success show_article'} %>
+      <br>
+      <br>
+      <table id="customers">
+        <tr>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Enabled</th>
+          <th>State</th>
+          <th>City</th>
+          <th>Doornumber</th>
+          <th colspan="5">Actions</th>
+        </tr>
+        <% @users.each do |user| %>
+          <tr>
+            <td>
+              <%= user.name %>
+            </td>
+            <td>
+              <%= user.gender %>
+            </td>
+            <td>
+              <%= user.enabled %>
+            </td>
+            <td>
+              <%= user.address.state if user.address%>
+            </td>
+            <td>
+              <%= user.address.city if user.address %>
+            </td>
+            <td>
+              <%= user.address.doornumber if user.address %>
+            </td>
+            <td>
+              <%= link_to 'Show', user_path(user),{:class=>'btn btn-success show_article' }%>
+              <%= link_to 'Edit', edit_user_path(user),{:class=>'btn btn-warning edit'} %>
+              <%= link_to 'Destroy', '#', "data-toggle"=>"modal", "data-target" => "#delete-#{user.id}",:class=>'btn btn-danger' %>
+              <div class="modal fade" id="delete-<%= user.id %>" role="dialog">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">Confirmation Box</button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Are you sure to delete this user address</p>
+                    </div>
+                    <div class="modal-footer">
+                      <div class="modal-footer">
+                        <%= link_to 'Delete', user_path(user), method: :delete, :class => 'btn btn-danger' %>
+                        <a href="#" data-dismiss="modal" class="btn btn-warning">Cancel</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>              
+            </td>
+          </tr>
+        <% end %>
+      </table>
+      <br>
+    </div>
+  </div>
+</body>

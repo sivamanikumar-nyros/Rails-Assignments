@@ -1,0 +1,15 @@
+<body>
+  <div class="jumbotron">
+    <h4>you are interested to create a new article...</h4>
+    <h3>Please click this button</h3>
+    <%= link_to 'Create new article', articles_path,{:class=>'btn btn-success show_article'} %>
+  </div>
+  <div class="container">
+    <div class="formheader">
+      <h2 class="badge badge-primary Newbadge">New User</h2>
+    </div>
+    <div class="Listing-4" id="new_page">  
+      <%= render 'form' %>
+    </div>
+  </div>
+</body>

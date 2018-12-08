@@ -1,4 +1,7 @@
 <body>
+  <div align="left" class="col-6">
+    <%= link_to 'Create new user', users_new_path, {:class=>"btn btn-warning back"}%>
+  </div>
   <div id="index_page">
     <div class="Listing">
       <h2 class="badge badge-primary Listbadge">Listing Articles</h2>
@@ -16,47 +19,45 @@
           <th colspan="5">Actions</th>
         </tr>
         <% @articles.each do |article| %>
-          <tr>
-            <td>
-              <%= article.name %>
-            </td>
-            <td>
-              <%= article.description %>
-            </td>
-            <td>
-              <%= article.category.name %>
-            </td>
-            <td>
-              <%= article.author.name%>
-              
-            </td>
-            <td>
-              <%= link_to 'Show', article_path(article),{:class=>'btn btn-success show_article' }%>
-              <%= link_to 'Edit', edit_article_path(article),{:class=>'btn btn-warning edit'} %>
-              <%= link_to 'Destroy', '#', "data-toggle"=>"modal", "data-target" => "#delete-#{article.id}",:class=>'btn btn-danger' %>
-              <div class="modal fade" id="delete-<%= article.id %>" role="dialog">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">Confirmation Box</button>
-                    </div>
-                    <div class="modal-body">
-                      <p>Are you sure to delete this article</p>
-                    </div>
+        <tr>
+          <td>
+            <%= article.name %>
+          </td>
+          <td>
+            <%= article.description %>
+          </td>
+          <td>
+            <%= article.category.name %>
+          </td>
+          <td>
+            <%= article.author.name%>
+          </td>
+          <td>
+            <%= link_to 'Show', article_path(article),{:class=>'btn btn-success show_article' }%>
+            <%= link_to 'Edit', edit_article_path(article),{:class=>'btn btn-warning edit'} %>
+            <%= link_to 'Destroy', '#', "data-toggle"=>"modal", "data-target" => "#delete-#{article.id}",:class=>'btn btn-danger' %>
+            <div class="modal fade" id="delete-<%= article.id %>" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">Confirmation Box</button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Are you sure to delete this article</p>
+                  </div>
+                  <div class="modal-footer">
                     <div class="modal-footer">
-                      <div class="modal-footer">
-                        <%= link_to 'Delete', article_path(article), method: :delete, :class => 'btn btn-danger' %>
+                      <%= link_to 'Delete', article_path(article), method: :delete, :class => 'btn btn-danger' %>
                         <a href="#" data-dismiss="modal" class="btn btn-warning">Cancel</a>
-                      </div>
                     </div>
                   </div>
                 </div>
-              </div>              
-            </td>
-          </tr>
-        <% end %>
-      </table>
-      <br>
-    </div>
+              </div>
+            </div>              
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <br>
   </div>
 </body>

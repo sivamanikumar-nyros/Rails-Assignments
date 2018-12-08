@@ -1,57 +1,44 @@
 <body>
   <div class="container">
     <table id="customers">
-      <p>
-        <tr>
-          <th>
-            <strong>Name:</strong>
-          </th>
-          <td>
-            <%= @article.name %>
-          </td>
-        </tr>
-      </p>
-
-      <p>
-        <tr>
-          <th>
-            <strong>Description:</strong>
-          </th>
-          <td>
-            <%= @article.description %>
-          </td>
-        </tr>
-      </p>
-
-      <p>
-        <tr>
-          <th>
-            <strong>Category:</strong>
-          </th>
-          <td>
-            <%= @article.category.name %>
-          </td>
-        <tr>
-      </p>
-
-      <p>
-        <tr>
-          <th>
-            <strong>Author_name:</strong>
-          </th>
-          <td>
-            <%= @article.author.name %>
-          </td>
-        <tr>
-      </p>
-      
-      <p class="show_page">
+      <tr>
+        <th>
+          <strong>Name:</strong>
+        </th>
+        <td>
+          <%= @article.name %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <strong>Description:</strong>
+        </th>
+        <td>
+          <%= @article.description %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <strong>Category:</strong>
+        </th>
+        <td>
+          <%= @article.category.name %>
+        </td>
+      <tr>
+      <tr>
+        <th>
+          <strong>Author_name:</strong>
+        </th>
+        <td>
+          <%= @article.author.name %>
+        </td>
+      <tr>
+      <div class="show_page">
         <%= link_to 'Edit', edit_article_path(@article),{:class=>'btn btn-warning edit' } %>
-      </p>
-
-      <p  class="show_page-1">
+      </div>
+      <div  class="show_page-1">
         <%= link_to 'Back', articles_path,{:class=>'btn btn-warning back' } %>
-      </p>
+      </div>
     </table>
   </div>
 </body>

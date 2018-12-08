@@ -4,7 +4,6 @@ label{
 }
 body{
   background-color:lightgrey;
-  padding: 55px;
 }
 .container{
   background-color:white;
@@ -13,8 +12,8 @@ body{
   width:40%;
   margin-left: auto;
   margin-right:auto;
-  height:700px;
-
+  height:800px;
+  margin-bottom: 2%;
 }
 #index_page{
   background-color:white;
