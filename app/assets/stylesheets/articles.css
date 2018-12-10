@@ -4,6 +4,7 @@ label{
 }
 body{
   background-color:lightgrey;
+  padding: 5px;
 }
 .container{
   background-color:white;
