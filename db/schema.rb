@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_10_050257) do
+ActiveRecord::Schema.define(version: 2018_12_10_065809) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -45,19 +45,8 @@ ActiveRecord::Schema.define(version: 2018_12_10_050257) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "checkouts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "article_id"
-    t.boolean "checkbox"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "article_id"
-    t.string "reviewer_name"
-    t.text "content"
-    t.integer "rating"
+    t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -97,6 +86,17 @@ ActiveRecord::Schema.define(version: 2018_12_10_050257) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "users_reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "review_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_id"], name: "index_users_reviews_on_review_id"
+    t.index ["user_id"], name: "index_users_reviews_on_user_id"
+  end
+
   add_foreign_key "students_teachers", "students"
   add_foreign_key "students_teachers", "teachers"
+  add_foreign_key "users_reviews", "reviews"
+  add_foreign_key "users_reviews", "users"
 end
