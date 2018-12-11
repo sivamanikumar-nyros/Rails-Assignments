@@ -1,6 +1,10 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all
+    @articles = if params[:term]
+      Article.where('name LIKE ?',"%#{params[:term]}")
+    else
+      Article.all
+    end
   end
  
   def show
@@ -44,6 +48,6 @@ class ArticlesController < ApplicationController
  
   private
     def article_params
-      params.require(:article).permit(:name, :description ,:category_id,:author_id , :checkbox)
+      params.require(:article).permit(:name, :description ,:category_id,:author_id , :checkbox,:term)
     end
 end
