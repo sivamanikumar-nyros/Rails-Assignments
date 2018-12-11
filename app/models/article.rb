@@ -16,6 +16,9 @@ class Article < ApplicationRecord
 
     after_create :create_action
 
+    has_many :checkouts
+    has_many :users , through: :checkouts
+
     
     def create_action
 

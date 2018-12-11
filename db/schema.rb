@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_10_065809) do
+ActiveRecord::Schema.define(version: 2018_12_10_121548) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 2018_12_10_065809) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "checkouts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "article_id"
+    t.index ["article_id"], name: "index_checkouts_on_article_id"
+    t.index ["user_id"], name: "index_checkouts_on_user_id"
   end
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -95,6 +104,8 @@ ActiveRecord::Schema.define(version: 2018_12_10_065809) do
     t.index ["user_id"], name: "index_users_reviews_on_user_id"
   end
 
+  add_foreign_key "checkouts", "articles"
+  add_foreign_key "checkouts", "users"
   add_foreign_key "students_teachers", "students"
   add_foreign_key "students_teachers", "teachers"
   add_foreign_key "users_reviews", "reviews"
