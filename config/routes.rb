@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'users/edit'
   get 'users/new'
 	get 'users/show'
+
 	
- 	root 'articles#index'
+	
+ 	root 'welcome#index'
 end

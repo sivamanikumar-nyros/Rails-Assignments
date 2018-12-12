@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    @users = if params[:terms]
+      User.where(name: params[:terms])
+    else
+      User.all
+    end
   end
  
   def show
@@ -44,7 +48,7 @@ class UsersController < ApplicationController
  
   private
     def user_params
-      params.require(:user).permit(:name, :gender,:enabled,:state,:city,:doornumber)
+      params.require(:user).permit(:name, :gender,:enabled,:state,:city,:doornumber,:terms)
     end
 end
 
