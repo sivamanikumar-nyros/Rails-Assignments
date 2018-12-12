@@ -2,6 +2,8 @@ class ArticlesController < ApplicationController
   def index
     @articles = if params[:term]
       Article.where(name: params[:term])
+    elsif params[:not]
+      Article.where.not('name LIKE ?',"%#{params[:not]}")
     else
       Article.all
     end

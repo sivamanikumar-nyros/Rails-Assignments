@@ -14,6 +14,11 @@
         <%= submit_tag 'search',{:class=>'btn btn-success show_article' }  %>
       <% end %>
       <br>
+      <h1>Not_function</h1>
+      <%= form_tag(articles_path,method: :get) do %>
+        <%= text_field_tag :not %>
+        <%= submit_tag 'search',{:class=>'btn btn-success show_article' }  %>
+      <% end %>
       <table id="customers">
         <tr>
           <th>Name</th>
