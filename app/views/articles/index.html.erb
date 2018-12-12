@@ -11,7 +11,7 @@
       <br><br>
       <%= form_tag(articles_path,method: :get) do %>
         <%= text_field_tag :term %>
-        <%= submit_tag 'search' %>
+        <%= submit_tag 'search',{:class=>'btn btn-success show_article' }  %>
       <% end %>
       <br>
       <table id="customers">

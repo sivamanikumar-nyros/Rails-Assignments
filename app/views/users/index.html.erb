@@ -7,6 +7,11 @@
       <%= link_to 'New user', new_user_path,{:class=>'btn btn-success show_article'} %>
       <br>
       <br>
+      <%= form_tag(users_path,method: :get) do %>
+        <%= text_field_tag :terms %>
+        <%= submit_tag 'search',{:class=>'btn btn-success show_article' }  %>
+      <% end %>
+      <br>
       <table id="customers">
         <tr>
           <th>Name</th>
