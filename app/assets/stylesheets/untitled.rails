@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Articles</h5>
+        <p class="card-text">Search for Articles</p>
+        <%= form_tag(articles_path,method: :get) do %>
+	  				<%= select_tag :term, options_from_collection_for_select(Article.all, :name, :name), multiple: true %>
+	    			<%= submit_tag 'search' %>
+					<% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Users</h5>
+        <p class="card-text">Search for users</p>
+        <%= form_tag(users_path,method: :get) do %>
+	  				<%= text_field_tag :terms %>
+	    			<%= submit_tag 'search' %>
+					<% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+	<section>
+		<h1 class="bg-dark text-white text-center">Rails-5 Application For Articles & Users</h1>
+    
+
+	</section>
+<br>
+<div class="row">
+	<div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Rails Application</h5>
+        <%= image_tag("article.jpg", :alt => "Articles") %>
+      </div>
+    </div>
+  </div>
+	<div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Users</h5>
+        	<%= image_tag("user.png", :alt => "Users") %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+class AuthorsController < ApplicationController
+ def index
+   @article = Article.all
+   @articles = .where(name:"siva")
+   
+ end
+ def show
+   @category = Category.where("id = ?", params[:id])
+   @articles_names_not = Article.where.not(name:"Teja")
+   @articles_names_or = Article.where.not(name:"siva") .or Article.where.not(name:"Teja")
+ end
+ private
+   def article_params
+     params.require(:article).permit(:id, :nationality, :name)
+   end
+end

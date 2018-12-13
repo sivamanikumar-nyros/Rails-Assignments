@@ -4,6 +4,8 @@ class ArticlesController < ApplicationController
       Article.where(name: params[:term])
     elsif params[:not]
       Article.where.not('name LIKE ?',"%#{params[:not]}")
+      elsif params[:both]
+        Article.where('name LIKE ?',"%#{params[:both]}").or(Author.where('category LIKE ?',"%#{params[:both]}" ))
     else
       Article.all
     end
