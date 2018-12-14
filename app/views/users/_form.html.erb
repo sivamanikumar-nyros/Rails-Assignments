@@ -14,17 +14,14 @@
       <%= f.label :enabled%>
       <%= f.text_field :enabled,{:class=>'form-control' } %>
     </div>
-      <%= f.fields_for :addresses do |addr|%>
+      <%= f.fields_for :address, @address do |addr|%>
     
     <div class="address">
       
-      <div class="form-group">
-        <%= addr.label :user_id%>
-        <%= addr.text_field :user_id,{:class=>'form-control' } %>
-      </div>
       
       <div class="form-group">
         <%= addr.label :street%>
+        <%= addr.hidden_field :id,{:class=>'form-control' } %>
         <%= addr.text_field :street,{:class=>'form-control' } %>
       </div>
       

@@ -7,8 +7,15 @@
       <%= link_to 'New user', new_user_path,{:class=>'btn btn-success show_article'} %>
       <br>
       <br>
+      <h4>Search Users</h4>
       <%= form_tag(users_path,method: :get) do %>
         <%= text_field_tag :terms %>
+        <%= submit_tag 'search',{:class=>'btn btn-success show_article' }  %>
+      <% end %>
+      <br>
+      <h4>Search Specific field</h4>
+      <%= form_tag(users_path,method: :get) do %>
+        <%= text_field_tag :Specific %>
         <%= submit_tag 'search',{:class=>'btn btn-success show_article' }  %>
       <% end %>
       <br>

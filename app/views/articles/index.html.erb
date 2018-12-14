@@ -9,28 +9,51 @@
     <div class="Listing-2">
       <%= link_to 'New article', new_article_path,{:class=>'btn btn-success show_article'} %>
       <br><br>
-      <%= form_tag(articles_path,method: :get) do %>
-        <%= text_field_tag :term %>
-        <%= submit_tag 'search',{:class=>'btn btn-success show_article' }  %>
-      <% end %>
-      <br>
-      <h1>Not_function</h1>
-      <%= form_tag(articles_path,method: :get) do %>
-        <%= text_field_tag :not %>
-        <%= submit_tag 'search',{:class=>'btn btn-success show_article' }  %>
-      <% end %>
-      <br>
-      <h4>Search by title or category</h4>
-      <%= form_tag(articles_path,method: :get) do %>
-        <%= text_field_tag :both %>
-        <%= submit_tag 'search',{:class=>'btn btn-success show_article' }  %>
-      <% end %> 
+      <div class="row">
+        <div class="column">
+          <h2>Search Articles</h2>
+          <p>
+            <%= form_tag(articles_path,method: :get) do %>
+              <%= text_field_tag :term %>
+              <%= submit_tag 'search',{:class=>'btn btn-success show_article' }  %>
+            <% end %>
+          </p>
+        </div>
+        <div class="column">
+          <h2>Not_function</h2>
+          <p>
+            <%= form_tag(articles_path,method: :get) do %>
+              <%= text_field_tag :not %>
+              <%= submit_tag 'search',{:class=>'btn btn-success show_article' }  %>
+            <% end %>
+          </p>
+        </div>
+        <div class="column">
+          <h2>Author => Articles</h2>
+          <p>
+            <%= form_tag(articles_path,method: :get) do %>
+              <%= text_field_tag :count %>
+              <%= submit_tag 'search',{:class=>'btn btn-success show_article' }  %>
+            <% end %>
+          </p>
+        </div>
+      </div>
+      <h2 class="btn-primary text-center">
+        <b class="counttext">
+          Total articles-
+          <badge class="articlecount label label-info">
+            <%= Article.count %>
+          </badge>
+        </b>
+      </h2>
+      
       <table id="customers">
         <tr>
-          <th>Name</th>
+          <th>Name of the article</th>
           <th>Description</th>
           <th>Category</th>
           <th>Author_name</th>
+          <th>Article Published</th>
           <th colspan="5">Actions</th>
         </tr>
         <% @articles.each do |article| %>
@@ -46,6 +69,9 @@
           </td>
           <td>
             <%= article.author.name%>
+          </td>
+          <td>
+            <%= article.checkbox %>
           </td>
           <td>
             <%= link_to 'Show', article_path(article),{:class=>'btn btn-success show_article' }%>

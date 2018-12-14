@@ -4,10 +4,13 @@ class ArticlesController < ApplicationController
       Article.where(name: params[:term])
     elsif params[:not]
       Article.where.not('name LIKE ?',"%#{params[:not]}")
-      elsif params[:both]
-        Article.where('name LIKE ?',"%#{params[:both]}").or(Author.where('category LIKE ?',"%#{params[:both]}" ))
-    else
+    elsif params[:count]
+      Article.all.includes(:author).where(authors: {name: params[:count]})
+    elsif params[:specific]
+      @articles = Article.select(:name).distinct
+      else
       Article.all
+
     end
   end
  
@@ -28,6 +31,7 @@ class ArticlesController < ApplicationController
  
     if @article.save
       redirect_to @article
+     
     else
       render 'new'
     end

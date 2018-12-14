@@ -2,6 +2,9 @@ class UsersController < ApplicationController
   def index
     @users = if params[:terms]
       User.where(name: params[:terms])
+    elsif params[:specific]
+       User.select(:name).distinct
+
     else
       User.all
     end
@@ -11,26 +14,29 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
  
-  def new
-    @user = User.new
-  end
- 
   def edit
     @user = User.find(params[:id])
   end
  
+  def new
+    @user = User.new
+    @address = @user.build_address 
+  end
+
   def create
     @user = User.new(user_params)
- 
-    if @user.save
+
+    if @user.save      
+      flash[:success] = "User created!"
       redirect_to @user
     else
-      render 'new'
-    end
+      render 'new'      
+    end    
   end
  
   def update
     @user = User.find(params[:id])
+    @address = @user.address 
  
     if @user.update(user_params)
       redirect_to @user
@@ -48,7 +54,7 @@ class UsersController < ApplicationController
  
   private
     def user_params
-      params.require(:user).permit(:name, :gender,:enabled,:state,:city,:doornumber,:terms)
+      params.require(:user).permit(:name, :gender,:enabled, address_attributes: [:id, :state, :city,:street, :doornumber,:terms ])
     end
 end
 

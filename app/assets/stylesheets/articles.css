@@ -166,3 +166,12 @@ textarea {
   padding: 5px;
   
 }
+.column{
+  padding-right: 45px;
+  border: 1px solid black;
+  padding-left: 5px;
+  margin-left: 5%;
+  margin-bottom: 0.5%;
+  background-color: lightblue;
+  text-align: center;
+}

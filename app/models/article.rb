@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+  scope :published, -> { where(checkbox: true) }
 	validates :name, :presence => true
   validates :description, :presence => true,
   length:{minimum: 5}
@@ -15,4 +16,7 @@ class Article < ApplicationRecord
       self.story = "Accepted"
       self.save!
     end
+
+    
+
 end
