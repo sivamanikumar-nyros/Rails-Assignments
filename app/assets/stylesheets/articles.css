@@ -3,7 +3,7 @@ label{
   color:#343a40;
 }
 body{
-  background-color:lightgrey;
+  background-color:#956F73;
   padding: 5px;
 }
 .container{
@@ -174,4 +174,32 @@ textarea {
   margin-bottom: 0.5%;
   background-color: lightblue;
   text-align: center;
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+.item {
+  width: 250px;
+  min-height: 120px;
+  max-height: auto;
+  float: left;
+  margin: 3px;
+  padding: 3px;
+  position:relative;
+  text-align:center;
+  background:#000;
+}
+.bottom-bar {
+  position:relative;
+  text-align:center;
+  font-size:1em;
+  text-transform:uppercase;
+  background:#000;
+  padding:15px 0;
+  color: white;
+}
+.heading{
+  background-color: black;
+  color: white;
 }

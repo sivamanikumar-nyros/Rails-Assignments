@@ -4,7 +4,6 @@ class Article < ApplicationRecord
   validates :description, :presence => true,
   length:{minimum: 5}
   validates :category, :presence => true
-  validates :checkbox, :presence => true
   
   has_many :checkouts
   has_many :users , through: :checkouts

@@ -13,12 +13,7 @@
         <%= submit_tag 'search',{:class=>'btn btn-success show_article' }  %>
       <% end %>
       <br>
-      <h4>Search Specific field</h4>
-      <%= form_tag(users_path,method: :get) do %>
-        <%= text_field_tag :Specific %>
-        <%= submit_tag 'search',{:class=>'btn btn-success show_article' }  %>
-      <% end %>
-      <br>
+      
       <table id="customers">
         <tr>
           <th>Name</th>
