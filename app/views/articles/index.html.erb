@@ -100,5 +100,13 @@
       <% end %>
     </table>
     <br>
+    <h4>Today Posted Articles=></b><%= Article.where(created_at: Date.today...Date.today+1).count %>
+    </h4>
   </div>
 </body>
+
+
+
+
+    
+    

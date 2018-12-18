@@ -18,6 +18,46 @@
     </div>
   </div>
 </header>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+      <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
+      <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+      <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+    </div>
+  </div>
+  <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
+  <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
+  <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+  <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+</nav>
+<div class="total">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="articles">
+          
+          <p>No.of articles =>
+        <%= Article.count %>
+      </p>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center">
+        Welcome! The date and time is <%= Time.now %>
+      </div>
+      <div class="col-lg-3">
+        <div class="users">
+          <p>No.of users =>
+        <%= User.count %>
+      </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <hr>
 
  
