@@ -56,6 +56,6 @@ class ArticlesController < ApplicationController
  
   private
     def article_params
-      params.require(:article).permit(:name, :description ,:category_id,:author_id , :checkbox,:term)
+      params.require(:article).permit(:name, :description ,:category_id,:author_id , :checkbox,:term,:attachment)
     end
 end
