@@ -25,6 +25,13 @@
         <%= form.select :author_id, Author.all.pluck(:name, :id), { prompt: 'Select' }, { class: "form-control" } %>
         <p class="error_msg" ><%= @article.errors.messages[:author].first if @article.errors.messages[:author].any? %></p>
       </div>
+      <div class="form-group">
+        <%= form.label :uploadimage%>
+        <%= form.file_field :image,{:class=>'form-control' } %>
+        <br>
+        <small>Only PNG, JPG and GIf images are allowed</small>
+      </div>
+    
       <p class="check_box">
         <%= form.check_box :checkbox%>
             If you want to publish your story accept this!!

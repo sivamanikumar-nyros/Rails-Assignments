@@ -30,6 +30,8 @@ gem 'bootstrap'
 gem 'chosen-rails'
 gem 'jquery-rails'
 gem 'client_side_validations'
+gem 'clearance', '~> 1.16'
+gem 'shrine', '~> 2.6'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'hirb', '~> 0.7.3'
