@@ -33,12 +33,12 @@
           <%= @article.author.name %>
         </td>
       <tr>
-      <div class="show_page">
-        <%= link_to 'Edit', edit_article_path(@article),{:class=>'btn btn-warning edit' } %>
-      </div>
-      <div  class="show_page-1">
+      <p  class="show_page-1">
         <%= link_to 'Back', articles_path,{:class=>'btn btn-warning back' } %>
-      </div>
+      </p>
+      <p class="show_page-2">
+        <%= link_to 'Edit', edit_article_path(@article),{:class=>'btn btn-warning edit' } %>
+      </p>
     </table>
   </div>
 </body>

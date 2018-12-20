@@ -136,10 +136,10 @@ body{
   width:100%;
 }
 
-.show_page{
+.show_page-1{
   float:left;
 }
-.show_page-1{
+.show_page-2{
   float:right;
 }
 .formheader {
@@ -238,3 +238,4 @@ img{
   color: white;
   text-align: center; 
 }
+
