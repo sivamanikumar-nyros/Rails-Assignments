@@ -6,8 +6,8 @@
           <h5 class="card-title">Articles</h5>
           <p class="card-text">Search for Articles(Multiple Select Option Is Available )</p>
           <%= form_tag(articles_path,method: :get) do %>
-  	  			<%= select_tag :term, options_from_collection_for_select(Article.all, :name, :name), multiple: true, class: 'multi-select' %>
-  	    			<%= submit_tag 'search',{:class=>'btn btn-success show_article' } %>
+  	  		<%= select_tag :term, options_from_collection_for_select(Article.all, :name, :name), multiple: true, class: 'multi-select' %>
+  	    	<%= submit_tag 'search',{:class=>'btn btn-success show_article' } %>
   				<% end %>
         </div>
       </div>
@@ -18,8 +18,8 @@
           <h5 class="card-title">Users</h5>
           <p class="card-text">Search for users(Multiple Select Option Is Available )</p>
           <%= form_tag(users_path,method: :get) do %>
-  	  			<%= select_tag :terms, options_from_collection_for_select(User.all, :name, :name), multiple: true, class: 'multi-select'  %>
-  	    			<%= submit_tag 'search',{:class=>'btn btn-success show_article' } %>
+  	  		<%= select_tag :terms, options_from_collection_for_select(User.all, :name, :name), multiple: true, class: 'multi-select'  %>
+  	    	<%= submit_tag 'search',{:class=>'btn btn-success show_article' } %>
   				<% end %>
   			</div>
       </div>
@@ -35,7 +35,7 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title"><b>Click this image(Articles-Page)</b></h5>
-            <a href="<%= articles_path %>"><%= image_tag("article.jpg", :alt => "Articles") %></a>
+          <a href="<%= articles_path %>"><%= image_tag("article.jpg", :alt => "Articles") %></a>
         </div>
       </div>
     </div>
@@ -43,7 +43,7 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title"><b>Click this image(Users-Page)</b></h5>
-          	<a href="<%= users_path %>"><%= image_tag("user.png", :alt => "Users") %></a>
+          <a href="<%= users_path %>"><%= image_tag("user.png", :alt => "Users") %></a>
         </div>
       </div>
     </div>
