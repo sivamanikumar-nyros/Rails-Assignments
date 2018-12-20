@@ -4,8 +4,7 @@ class Article < ApplicationRecord
   validates :description, :presence => true,
   length:{minimum: 5}
   validates :category, :presence => true
-  mount_uploader :attachment, AttachmentUploader 
-  validates :name, presence: true
+  mount_uploader :attachment, AttachmentUploader
   has_many :checkouts
   has_many :users , through: :checkouts
   belongs_to :author
@@ -16,7 +15,4 @@ class Article < ApplicationRecord
       self.story = "Accepted"
       self.save!
     end
-
-    
-
 end
