@@ -32,7 +32,7 @@
         <% @users.each do |user| %>
           <tr>
             <td>
-              <%= user.name %>
+              <%= truncate(user.name * 100,length: 15) %>
             </td>
             <td>
               <%= user.gender %>
