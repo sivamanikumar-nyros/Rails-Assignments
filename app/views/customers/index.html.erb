@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+<% if notice %>
+<p id="notice"><%= notice %>
+</p>
+    <% end %>
+  <div class="">
+    <h2 class="badge badge-primary Listbadge">Listing Customers</h2>
+    </div>
+
+<table id="customers">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="5">Actions</th>
+    </tr>
+  </thead>
+  <div class="logout">
+<%= link_to 'logout', 'sessions/destroy',{:class=>'btn btn-warning edit',title: 'Edit Articles'} %>
+</div>
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.name %></td>
+        <td><%= link_to 'Show', customer ,{:class=>'btn btn-success show_article',title: 'Show Articles' }%></td>
+        <td><%= link_to 'Edit', edit_customer_path(customer),{:class=>'btn btn-warning edit',title: 'Edit Articles'} %></td>
+        <td><%= link_to 'Destroy', '#', "data-toggle"=>"modal", "data-target" => "#delete-#{customer.id}",:class=>'btn btn-danger',title: 'Destroy Customers' %>
+          <div class="modal fade" id="delete-<%= customer.id %>" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">Confirmation Box</button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Are you sure to delete this article</p>
+                  </div>
+                  <div class="modal-footer">
+                    <div class="modal-footer">
+                      <%= link_to 'Delete', customer_path(customer), method: :delete, :class => 'btn btn-danger' %>
+                        <a href="#" data-dismiss="modal" class="btn btn-warning">Cancel</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div class="newcustomer">
+<%= link_to 'Create New Customer', new_customer_path,{:class=>'btn btn-success show_article' } %>
+</div>

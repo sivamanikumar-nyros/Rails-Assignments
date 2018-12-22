@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   def index
     @users = if params[:terms]
       User.where(name: params[:terms])
