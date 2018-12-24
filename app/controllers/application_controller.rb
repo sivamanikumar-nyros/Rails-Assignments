@@ -3,8 +3,11 @@ class ApplicationController < ActionController::Base
 	before_action :authorize
 	protected
 	def authorize
-			unless Customer.find_by(id: session[:customer_id])
-				redirect_to login_path, notice:"you trying to access without permit ? Lol"
+		unless Customer.find_by(id: session[:customer_id])
+			redirect_to login_path, notice:"you trying to access without permit ? Lol"
 		end
 	end	
+	def customer_is_logged_in?
+    Customer.find_by(id: session[:customer_id])
+	end
 end

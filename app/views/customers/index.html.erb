@@ -1,22 +1,28 @@
-<p id="notice"><%= notice %></p>
-<% if notice %>
-<p id="notice"><%= notice %>
-</p>
-    <% end %>
-  <div class="">
+<div id="index_page-2"> 
+<div class="listing">
     <h2 class="badge badge-primary Listbadge">Listing Customers</h2>
     </div>
+    <hr>
 
-<table id="customers">
+<table id="customers_info">
+  <% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
   <thead>
+    
     <tr>
       <th>Name</th>
       <th colspan="5">Actions</th>
     </tr>
   </thead>
-  <div class="logout">
-<%= link_to 'logout', 'sessions/destroy',{:class=>'btn btn-warning edit',title: 'Edit Articles'} %>
-</div>
+  <div class="builder-1">
+  <p  class="show_page-1">
+    <%= link_to 'logout', 'sessions/destroy',{:class=>'btn btn-warning edit',title: 'Edit Articles'} %>
+  </p>
+  <p class="show_page-2">
+  <%= link_to 'Create New Customer', new_customer_path,{:class=>'btn btn-success show_article' } %>
+  </p>
+  </div>
   <tbody>
     <% @customers.each do |customer| %>
       <tr>
@@ -47,8 +53,6 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-<div class="newcustomer">
-<%= link_to 'Create New Customer', new_customer_path,{:class=>'btn btn-success show_article' } %>
 </div>
+<br>
+

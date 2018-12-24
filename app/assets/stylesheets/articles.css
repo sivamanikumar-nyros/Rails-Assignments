@@ -6,7 +6,7 @@ body{
   background-color:#956F73;
   padding: 5px;
 }
-.container{
+.builder{
   background-color:white;
   padding: 10px;
   margin-top:3%;
@@ -16,10 +16,29 @@ body{
   height:800px;
   margin-bottom: 2%;
 }
+.builder-1{
+  padding: 10px;
+  margin-top:3%;
+  width:100%;
+  margin-left: auto;
+  margin-right:auto;
+  margin-bottom: 3%;
+}
+
 #index_page{
   background-color:white;
   padding: 10px;
   margin-top:3%;
+
+}
+#index_page-2{
+  background-color:white;
+  padding: 10px;
+  margin-top:3%;
+  width:60%;
+  margin-left: auto;
+  margin-right:auto;
+  margin-bottom: 2%;
 }
 .form_page{
   width:50%;
@@ -31,12 +50,32 @@ body{
   border-collapse: collapse;
   width: 100%;
 }
+#customers_info{
+  border-collapse: collapse;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 
 #customers td, #customers th {
   border: 1px solid #ddd;
   padding: 8px;
   background-color: #f5f5f6;
   color: #8f95a5;
+}
+#customers_info td, #customers_info th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  background-color: #f5f5f6;
+  color: #8f95a5;
+}
+#customers_info th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:#f2f2f2;
+  color: black;
 }
 
 
@@ -166,6 +205,7 @@ textarea {
   padding: 5px;
   
 }
+
 .column{
   padding-right: 45px;
   border: 1px solid black;
@@ -250,7 +290,8 @@ img{
   margin-top:2%; 
 }
 .logout{
-  margin:1%;
+  margin-left:28%;
+
 }
 .newcustomer{
   margin:1%;

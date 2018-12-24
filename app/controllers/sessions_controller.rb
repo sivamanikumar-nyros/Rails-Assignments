@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
   	customer = Customer.find_by(name: params[:name])
   	if customer and customer.authenticate(params[:password])
   		session[:customer_id] = customer.id
+      session[:customer_name] = customer.name
   		redirect_to admin_url
   	else
   		redirect_to login_url,alert:"Invalid username or password"
@@ -18,3 +19,9 @@ class SessionsController < ApplicationController
   	redirect_to login_url,alert:"Successfully logged out "
   end
 end
+
+
+
+
+
+
