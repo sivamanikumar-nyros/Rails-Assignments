@@ -1,13 +1,10 @@
   class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
   skip_before_action :authorize,only: [:new,:create,:index]
-  
-  
   def index
     @customers = Customer.all
   end
 
-  
   def show
   end
 
@@ -26,7 +23,7 @@
 
     respond_to do |format|
       if @customer.save
-        format.html { redirect_to customers_path, notice: 'User was successfully created.' }
+        format.html { redirect_to login_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @customer }
       else
         format.html { render :new }
@@ -67,4 +64,6 @@
     def customer_params
       params.require(:customer).permit(:name, :password, :password_confirmation)
     end
+
+    
 end

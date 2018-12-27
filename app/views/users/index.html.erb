@@ -32,7 +32,7 @@
         <% @users.each do |user| %>
           <tr>
             <td>
-              <%= truncate(user.name * 100,length: 15) %>
+              <%= truncate(user.name ,length: 15) %>
             </td>
             <td>
               <%= user.gender %>
@@ -49,6 +49,7 @@
             <td>
               <%= user.address.doornumber if user.address %>
             </td>
+            
             <td>
               <%= link_to 'Show', user_path(user),{:class=>'btn btn-success show_article',title: 'Show User Account' }%>
               <%= link_to ' Edit', edit_user_path(user), class: "btn btn-warning edit ",title: 'Edit User Account'  %>

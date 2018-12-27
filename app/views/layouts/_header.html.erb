@@ -23,9 +23,9 @@
   <a href="/users"><i class="fa fa-fw fa-user"></i>Users</a> 
   <a href="/articles"><i class="fa fa-newspaper-o"></i>Articles</a> 
   <% if Customer.find_by(id: session[:customer_id])%>
-    <a href="sessions/destroy"><i class="fa fa-sign-out"></i>Logout </a>
+    <a href="/sessions/destroy"><i class="fa fa-sign-out"></i>Logout </a>
   <% else %>
-    <a href="customers"><i class="fa fa-registered"></i> Register here</a>
+    <a href="/customers/new"><i class="fa fa-registered"></i> Register here</a>
   <% end %>
   
 </nav>

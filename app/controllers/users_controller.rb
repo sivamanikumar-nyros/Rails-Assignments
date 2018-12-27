@@ -8,11 +8,22 @@ class UsersController < ApplicationController
 
     else
       User.all
+
     end
   end
  
   def show
     @user = User.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        
+        pdf = UserPdf.new(@user)
+        send_data pdf.render, filename:"user_#{@user.name}.pdf",
+                            type: "application/pdf",
+                            disposition: "inline"
+      end
+    end
   end
  
   def edit

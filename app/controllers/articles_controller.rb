@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  
   def index
     @articles = if params[:term]
       Article.where(name: params[:term])
