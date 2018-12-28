@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 	rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 	protect_from_forgery with: :exception
 	before_action :authorize
-	http_basic_authenticate_with name: "admin", password: "siva"
+	
 	protected
 	def authorize
 		unless Customer.find_by(id: session[:customer_id])
