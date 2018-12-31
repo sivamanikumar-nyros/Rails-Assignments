@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   end
  
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     respond_to do |format|
       format.html
       format.pdf do
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   end
  
   def edit
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
   end
  
   def new
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
   end
  
   def update
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     @address = @user.address 
  
     if @user.update(user_params)
@@ -58,7 +58,7 @@ class UsersController < ApplicationController
   end
  
   def destroy
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     @user.destroy
  
     redirect_to users_path

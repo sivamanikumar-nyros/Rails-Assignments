@@ -82,6 +82,7 @@
           </td>
           <td><%= link_to "Download", article.attachment_url if article.attachment_url %><i class="fa fa-fw fa-download"></i>
           </td>
+          #
           <td>
             <%= link_to 'Show', article_path(article),{:class=>'btn btn-success show_article',title: 'Show Articles' }%>
             <%= link_to 'Edit', edit_article_path(article),{:class=>'btn btn-warning edit',title: 'Edit Articles'} %>

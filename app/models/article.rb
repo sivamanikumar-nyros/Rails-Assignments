@@ -7,6 +7,7 @@ class Article < ApplicationRecord
   mount_uploader :attachment, AttachmentUploader
   has_many :checkouts
   has_many :users , through: :checkouts
+  has_many :comments
   belongs_to :author
   belongs_to :category
   
