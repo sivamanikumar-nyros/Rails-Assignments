@@ -13,8 +13,9 @@ class UsersController < ApplicationController
   end
  
   def display
-    @user = User.find(params[:user_id])
+    @users = User.find(params[:user_id])
   end
+
   def show
     @user = User.find(params[:user_id])
     respond_to do |format|

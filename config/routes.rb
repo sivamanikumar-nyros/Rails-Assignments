@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'users' => "users#index"
 
+
   get 'users/new' => "users#new"
 
   post 'users' => "users#create"
@@ -11,6 +12,8 @@ Rails.application.routes.draw do
   get 'user/:user_id' => 'users#show', as:"user"
 
   get 'user/:user_id/edit' => 'users#edit', as: :edit_user
+
+  get 'users/:user_id/display' => 'users#display'
 
   patch 'user/:user_id' => "users#update"
 
@@ -26,6 +29,8 @@ Rails.application.routes.draw do
       get 'display'
     end 
   end
+
+  
 	
    get 'sessions/destroy'
    get 'admin' => 'admin#index'
