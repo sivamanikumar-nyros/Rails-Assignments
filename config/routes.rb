@@ -20,6 +20,12 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
+
+  resources :users do
+    member  do
+      get 'display'
+    end 
+  end
 	
    get 'sessions/destroy'
    get 'admin' => 'admin#index'

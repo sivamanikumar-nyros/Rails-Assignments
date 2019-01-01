@@ -12,6 +12,9 @@ class UsersController < ApplicationController
     end
   end
  
+  def display
+    @user = User.find(params[:user_id])
+  end
   def show
     @user = User.find(params[:user_id])
     respond_to do |format|
@@ -63,6 +66,8 @@ class UsersController < ApplicationController
  
     redirect_to users_path
   end
+
+
  
   private
     def user_params

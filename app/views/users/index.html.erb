@@ -51,6 +51,7 @@
             </td>
             
             <td>
+             <%= link_to 'click',display_user_path(user),{:class=>'btn btn-primary',title: 'Show User Account' } %>
               <%= link_to 'Show', user_path(user),{:class=>'btn btn-success show_article',title: 'Show User Account' }%>
               <%= link_to ' Edit', edit_user_path(user), class: "btn btn-warning edit ",title: 'Edit User Account'  %>
               <%= link_to 'Destroy', '#', "data-toggle"=>"modal", "data-target" => "#delete-#{user.id}",:class=>'btn btn-danger',title: 'Destroy User Account' %>
