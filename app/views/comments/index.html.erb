@@ -1,7 +1,6 @@
-<%= link_to "New", new_article_comment_path%>
+<%= link_to "Create New Comment", new_article_comment_path, {:class=>"btn btn-primary"}%>
 
-
-<table id="customers">
+<table id="customers" class="mt-5">
   <tr>
     <th>Article Title</th>
     <th>Name of the commentor</th>
@@ -17,4 +16,4 @@
     </tr>
   <% end %>
 </table>
-<%= link_to "Back" , articles_path %>
+<%= link_to "Back" , articles_path, {:class=>"btn btn-warning back mt-5"} %>
