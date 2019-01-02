@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get 'users/:user_id/display' => 'users#display'
 
+  get 'users/search' => 'users#search'
+
   patch 'user/:user_id' => "users#update"
 
   delete 'user/:user_id' => 'users#destroy'
@@ -30,7 +32,13 @@ Rails.application.routes.draw do
     end 
   end
 
-  
+  resources :users do
+    collection  do
+      get 'search'
+    end 
+  end
+
+
 	
    get 'sessions/destroy'
    get 'admin' => 'admin#index'

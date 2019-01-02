@@ -25,6 +25,8 @@ class CustomersController < ApplicationController
 
     respond_to do |format|
       if @customer.save
+        
+        CustomerMailer.signup_confirmation(@customer).deliver
         format.html { redirect_to login_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @customer }
       else
@@ -63,13 +65,13 @@ class CustomersController < ApplicationController
     end
 
     def authenticate
-      authenticate_or_request_with_http_basic do |id, password| 
-        id == USER_ID && password == PASSWORD
+      authenticate_or_request_with_http_basic do |id,email,password| 
+        id == USER_ID && password == PASSWORD && email == EMAIL
       end
     end
     
     def customer_params
-      params.require(:customer).permit(:name, :password, :password_confirmation)
+      params.require(:customer).permit(:name, :email, :password, :password_confirmation)
     end
 
     
