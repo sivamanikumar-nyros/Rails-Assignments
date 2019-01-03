@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap'
 gem 'chosen-rails'
 gem 'jquery-rails'
+gem 'delayed_job_active_record'
 gem 'client_side_validations'
   
 # Use ActiveStorage variant

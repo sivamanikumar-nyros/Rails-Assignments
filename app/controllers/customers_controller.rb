@@ -3,6 +3,11 @@ class CustomersController < ApplicationController
   before_action :authenticate, :only => [:index, :edit, :delete ]
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
   skip_before_action :authorize,only: [:new,:create,:index]
+  
+  
+
+
+
   def index
     @customers = Customer.all
   end
@@ -25,9 +30,9 @@ class CustomersController < ApplicationController
 
     respond_to do |format|
       if @customer.save
-        FirstJobJob.set(wait: 10.seconds).perform_later(@customer.name)
+        FirstJobJob.set(wait: 60.seconds).perform_later(@customer)
 
-        CustomerMailer.signup_confirmation(@customer).deliver
+        
         format.html { redirect_to login_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @customer }
       else
@@ -63,6 +68,7 @@ class CustomersController < ApplicationController
   
     def set_customer
       @customer = Customer.find(params[:id])
+      
     end
 
     def authenticate

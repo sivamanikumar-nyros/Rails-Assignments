@@ -4,6 +4,7 @@ class FirstJobJob < ApplicationJob
   def perform(*args)
     puts args
     puts *args
+    CustomerMailer.signup_confirmation(*args).deliver
   end
   
 end

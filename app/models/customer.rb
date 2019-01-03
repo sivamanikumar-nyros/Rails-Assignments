@@ -4,4 +4,9 @@ class Customer < ApplicationRecord
 	validates :name, uniqueness:true
 	validates :email, :presence => true
 	validates :email, uniqueness:true
+
+	def set_customer
+		sleep 10
+		update_attribute(:delivered_at, Time.zone.now)
+	end
 end
