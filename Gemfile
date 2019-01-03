@@ -30,7 +30,6 @@ gem 'bootstrap'
 gem 'chosen-rails'
 gem 'jquery-rails'
 gem 'client_side_validations'
-
   
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -68,3 +67,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'carrierwave'
 gem 'prawn'
+gem 'figaro', '~> 1.1', '>= 1.1.1'

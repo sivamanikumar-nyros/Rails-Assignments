@@ -25,7 +25,8 @@ class CustomersController < ApplicationController
 
     respond_to do |format|
       if @customer.save
-        
+        FirstJobJob.set(wait: 10.seconds).perform_later(@customer.name)
+
         CustomerMailer.signup_confirmation(@customer).deliver
         format.html { redirect_to login_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @customer }
