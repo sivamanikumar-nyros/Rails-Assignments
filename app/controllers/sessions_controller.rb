@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-	skip_before_action :authorize
+	#skip_before_action :authorize
   def new
   end
 
@@ -12,6 +12,14 @@ class SessionsController < ApplicationController
   	else
   		redirect_to login_url,alert:"Invalid username or password"
   	end
+    founder = Founder.find_by(name: params[:name])
+    if founder and founder.authenticate(params[:password])
+      session[:founder_id] = founder.id
+      session[:founder_name] = founder.name
+      redirect_to admin_url
+    else
+      redirect_to login_url,alert:"Invalid username or password"
+    end
   end
 
   
@@ -19,6 +27,8 @@ class SessionsController < ApplicationController
   	session[:customer_id] = nil
     session[:customer_name] = nil
   	redirect_to login_url,alert:"Successfully logged out "
+    
+
   end
 end
 
