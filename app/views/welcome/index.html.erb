@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="card">
+
         <div class="card-body">
           <h5 class="card-title">Articles</h5>
           <p class="card-text">Search for Articles(Multiple Select Option Is Available )</p>
@@ -21,6 +22,8 @@
   	  		<%= select_tag :terms, options_from_collection_for_select(User.all, :name, :name), multiple: true, class: 'multi-select'  %>
   	    	<%= submit_tag 'search',{:class=>'btn btn-success show_article' } %>
   				<% end %>
+   
+
   			</div>
       </div>
     </div>
@@ -28,6 +31,7 @@
   <br>
   <section>
   	<h1 class="bg-dark text-white text-center">Rails-5 Application For Articles & Users</h1>
+    <p><%= link_to('Logout', destroy_founder_session_path, method: :delete, :class => "btn btn-warning") %></p>
   </section>
   <br>
   <div class="row">

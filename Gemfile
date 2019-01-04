@@ -30,7 +30,7 @@ gem 'bootstrap'
 gem 'chosen-rails'
 gem 'jquery-rails'
 gem 'client_side_validations'
-  
+gem 'devise'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'hirb', '~> 0.7.3'
