@@ -21,7 +21,6 @@
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
   <a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a>
   <a href="/users"><i class="fa fa-fw fa-user"></i>Users</a>
-  <a href="/founders/sign_out"><i class="fa fa-fw fa-user"></i>Logout</a> 
   <a href="/articles"><i class="fa fa-newspaper-o"></i>Articles</a> 
   <% if Customer.find_by(id: session[:customer_id])%>
     <a href="/sessions/destroy"><i class="fa fa-sign-out"></i>Logout </a>
