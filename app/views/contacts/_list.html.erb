@@ -1,0 +1,14 @@
+<table>
+    <tr>
+      <th> Id </th>
+      <th> UserName </th>
+      <th> ContactName </th>
+    </tr>
+    <% contacts.each do |contact,i| %>
+      <tr>
+        <td> <%= contact.id %> </td>
+        <td> <%= contact.user.name %> </td>
+        <td> <%= contact.name %> </td>
+      </tr>
+    <% end %>
+</table>
