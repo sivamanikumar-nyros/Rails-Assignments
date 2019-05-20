@@ -1,0 +1,9 @@
+<div class="jumbotron">
+<center><h2><b>Handling Large data</b></h2></center>
+	<div class="post">
+	  <%= render 'posts/list', posts: @posts %>
+	</div>
+	<div align="center">
+		<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+	</div>
+</div>

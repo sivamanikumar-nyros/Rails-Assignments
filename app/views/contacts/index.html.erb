@@ -1,4 +1,10 @@
-<div class="contact">
-  <%= render 'contacts/list', contacts: @contacts %>
+<div class="jumbotron">
+<center><h2><b>Handling Large data</b></h2></center>
+	<div class="contact">
+	  <%= render 'contacts/list', contacts: @contacts %>
+	</div>
+	<div align="center">
+		<%= will_paginate @contacts, renderer: BootstrapPagination::Rails %>
+	</div>
 </div>
-  
+

@@ -2,7 +2,7 @@ class ContactsController < ApplicationController
 
 before_action :set_name, only: [:show, :edit, :update, :destroy]
   def index
-    @contacts = Contact.all
+    @contacts = Contact.pagination_request(params[:page])
     respond_to  do |format|
       format.html
       format.js

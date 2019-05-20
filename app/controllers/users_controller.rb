@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 before_action :set_name, only: [:show, :edit, :update, :destroy]
 
   def index
-    @users = User.all
+    @users = User.pagination_request(params[:page])
     respond_to  do |format|
       format.html
       format.js
