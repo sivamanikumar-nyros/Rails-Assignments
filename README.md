@@ -1,4 +1,7 @@
 # README
+
+How to handle large data through rails applications.
+
 1.git clone https://github.com/sivamanikumar-nyros/Rails-Assignments
 
 2.git checkout Large_data_after_refactoring
