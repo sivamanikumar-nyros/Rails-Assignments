@@ -11,7 +11,9 @@
 
 6.rails db:migrate
 
-7.rails s
+7.rails db:seed
+
+8.rails s -b 0.0.0.0
 
 
 
