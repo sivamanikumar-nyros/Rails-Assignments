@@ -1,9 +1,18 @@
 # README
-1.git clone https://github.com/sivamanikumar-nyros/Rails-Assignments/edit/Large_data_after_refactoring
+1.git clone https://github.com/sivamanikumar-nyros/Rails-Assignments
 
-2.cd Large_data_after_refactoring
+2.git checkout Large_data_after_refactoring
 
-3.rails s
+3.cd Large_data_after_refactoring
+
+4.bundle install
+
+5.rails db:create
+
+6.rails db:migrate
+
+7.rails s
+
 
 
 
